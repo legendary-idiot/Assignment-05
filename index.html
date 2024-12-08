@@ -35,9 +35,11 @@
             Donate Bangladesh
           </h2>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
           <figure><img src="./assets/coin.png" alt="Coin Icon" /></figure>
-          <h3 class="text-[#111111B2] text-xl font-medium">55000 BDT</h3>
+          <h3 class="text-[#111111B2] text-xl font-medium">
+            <span id="account-balance">55000</span> BDT
+          </h3>
         </div>
       </nav>
       <section class="flex gap-4 justify-center mt-10 mb-4">
@@ -68,7 +70,11 @@
             <div
               class="bg-[#1111110D] inline-flex px-4 py-2 rounded-md gap-2 items-center w-fit"
             >
-              <img src="./assets/coin.png" alt="Coin Icon" />100 BDT
+              <img src="./assets/coin.png" alt="Coin Icon" /><span
+                id="balance-noakhali"
+                >1010</span
+              >
+              BDT
             </div>
             <h2 class="text-[#111111] text-xl font-bold">
               Donate for Flood at Noakhali, Bangladesh
@@ -83,12 +89,14 @@
             </p>
             <input
               type="text"
-              name="donation-amount"
+              name="donateToNoakhali"
               placeholder="Write Donation Amount"
-              id=""
+              id="donatedAmountNoakhali"
               class="text-[#11111198] border border-[#1111111A] rounded-lg w-full p-4 font-medium placeholder:font-light"
             />
             <button
+              type="submit"
+              id="donate-noakhali-btn"
               class="bg-[#B4F461] rounded-lg px-8 py-3 text-[#111111] font-semibold text-xl"
             >
               Donate Now
@@ -105,7 +113,11 @@
             <div
               class="bg-[#1111110D] inline-flex px-4 py-2 rounded-md gap-2 items-center w-fit"
             >
-              <img src="./assets/coin.png" alt="Coin Icon" />300 BDT
+              <img src="./assets/coin.png" alt="Coin Icon" /><span
+                id="balance-feni"
+                >300</span
+              >
+              BDT
             </div>
             <h2 class="text-[#111111] text-xl font-bold">
               Donate for Flood Relief in Feni, Bangladesh
@@ -120,12 +132,13 @@
             </p>
             <input
               type="text"
-              name="donation-amount"
+              name="donateToFeni"
               placeholder="Write Donation Amount"
-              id=""
+              id="donatedAmountFeni"
               class="text-[#11111198] border border-[#1111111A] rounded-lg w-full p-4 font-medium placeholder:font-light"
             />
             <button
+              id="donate-feni-btn"
               class="bg-[#B4F461] rounded-lg px-8 py-3 text-[#111111] font-semibold text-xl"
             >
               Donate Now
@@ -142,7 +155,11 @@
             <div
               class="bg-[#1111110D] inline-flex px-4 py-2 rounded-md gap-2 items-center w-fit"
             >
-              <img src="./assets/coin.png" alt="Coin Icon" />1100 BDT
+              <img src="./assets/coin.png" alt="Coin Icon" /><span
+                id="balance-quota"
+                >1100</span
+              >
+              BDT
             </div>
             <h2 class="text-[#111111] text-xl font-bold">
               Aid for Injured in the Quota Movement
@@ -157,12 +174,13 @@
             </p>
             <input
               type="text"
-              name="donation-amount"
+              name="donateToQuoata"
               placeholder="Write Donation Amount"
-              id=""
+              id="donatedAmountQuota"
               class="text-[#11111198] border border-[#1111111A] rounded-lg w-full p-4 font-medium placeholder:font-light"
             />
             <button
+              id="donate-quota-btn"
               class="bg-[#B4F461] rounded-lg px-8 py-3 text-[#111111] font-semibold text-xl"
             >
               Donate Now
@@ -184,6 +202,24 @@
           </p>
         </div>
       </section>
+      <!-- Modal -->
+      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box text-center space-y-4">
+          <h3 class="text-2xl font-bold">Congratulations!</h3>
+          <img
+            src="./assets/coin.png"
+            alt="Coin Icon"
+            class="mx-auto size-12"
+          />
+          <p class="font-medium">You have donated for the humankind!</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </main>
     <footer class="bg-[#F9F7F3] py-20"></footer>
     <script src="./scripts/scripts.js"></script>
