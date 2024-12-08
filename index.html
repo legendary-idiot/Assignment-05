@@ -18,7 +18,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header>
+    <header class="sticky top-0 bg-[#fffffff4] border border-slate-50">
       <nav class="flex justify-between py-8 px-[140px] bg-[#F9F7F3]">
         <div>
           <button
@@ -40,22 +40,24 @@
           <h3 class="text-[#111111B2] text-xl font-medium">55000 BDT</h3>
         </div>
       </nav>
-      <section class="flex gap-4 justify-center mt-16">
+      <section class="flex gap-4 justify-center mt-10 mb-4">
         <button
+          id="donation-btn"
           class="bg-[#B4F461] rounded-lg px-8 py-3 text-[#111111] font-semibold text-xl"
         >
           Donation
         </button>
         <button
+          id="history-btn"
           class="border-[#1111114D] border rounded-lg px-8 py-3 text-[#111111B2] font-medium text-xl"
         >
           History
         </button>
       </section>
     </header>
-    <main>
+    <main class="max-w-[1600px] mx-auto">
       <!-- Donation Tab -->
-      <section class="px-[140px] mt-8 mb-20 space-y-8">
+      <section id="donation-container" class="px-[140px] mt-8 mb-20 space-y-8">
         <div
           class="flex gap-8 border border-[#1111111A] justify-between p-8 rounded-2xl"
         >
@@ -66,7 +68,7 @@
             <div
               class="bg-[#1111110D] inline-flex px-4 py-2 rounded-md gap-2 items-center w-fit"
             >
-              <img src="./assets/coin.png" alt="Coin Icon" />0 BDT
+              <img src="./assets/coin.png" alt="Coin Icon" />100 BDT
             </div>
             <h2 class="text-[#111111] text-xl font-bold">
               Donate for Flood at Noakhali, Bangladesh
@@ -103,7 +105,7 @@
             <div
               class="bg-[#1111110D] inline-flex px-4 py-2 rounded-md gap-2 items-center w-fit"
             >
-              <img src="./assets/coin.png" alt="Coin Icon" />0 BDT
+              <img src="./assets/coin.png" alt="Coin Icon" />300 BDT
             </div>
             <h2 class="text-[#111111] text-xl font-bold">
               Donate for Flood Relief in Feni, Bangladesh
@@ -140,7 +142,7 @@
             <div
               class="bg-[#1111110D] inline-flex px-4 py-2 rounded-md gap-2 items-center w-fit"
             >
-              <img src="./assets/coin.png" alt="Coin Icon" />0 BDT
+              <img src="./assets/coin.png" alt="Coin Icon" />1100 BDT
             </div>
             <h2 class="text-[#111111] text-xl font-bold">
               Aid for Injured in the Quota Movement
@@ -169,7 +171,10 @@
         </div>
       </section>
       <!-- History Section -->
-      <section class="px-[140px] mt-8 mb-20 space-y-8">
+      <section
+        id="history-container"
+        class="px-[140px] mt-8 mb-20 space-y-8 hidden"
+      >
         <div class="border border-[#1111111A] p-8 rounded-xl space-y-2">
           <h2 class="text-[#111111] font-bold text-xl">
             96500 Taka is Donated for famine-2024 at Feni, Bangladesh
@@ -181,5 +186,6 @@
       </section>
     </main>
     <footer class="bg-[#F9F7F3] py-20"></footer>
+    <script src="./scripts/scripts.js"></script>
   </body>
 </html>
