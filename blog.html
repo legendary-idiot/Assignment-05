@@ -19,15 +19,17 @@
   </head>
   <body>
     <header>
-      <nav class="flex justify-between py-8 px-[140px] bg-[#F9F7F3]">
-        <div>
+      <nav
+        class="flex flex-col md:flex-row items-center md:justify-between py-8 px-8 lg:p-16 xl:px-[140px] bg-[#F9F7F3] gap-6 md:gap-4"
+      >
+        <div class="order-2 md:order-1">
           <button
             class="bg-[#B4F461] rounded-lg text-[#111111] font-semibold text-xl"
           >
             <a href="/" class="px-8 py-3 inline-block">Home</a>
           </button>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4 order-1">
           <figure>
             <img src="./assets/logo.png" alt="Donate Bangladesh Logo" />
           </figure>
@@ -35,9 +37,11 @@
             Donate Bangladesh
           </h2>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3 order-3 md:order-1">
           <figure><img src="./assets/coin.png" alt="Coin Icon" /></figure>
-          <h3 class="text-[#111111B2] text-xl font-medium">55000 BDT</h3>
+          <h3 class="text-[#111111B2] text-xl font-medium">
+            <span id="account-balance">55000</span> BDT
+          </h3>
         </div>
       </nav>
     </header>

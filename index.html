@@ -19,15 +19,17 @@
   </head>
   <body>
     <header class="sticky top-0 bg-[#fffffff4] border border-slate-50">
-      <nav class="flex justify-between py-8 px-[140px] bg-[#F9F7F3]">
-        <div>
+      <nav
+        class="flex flex-col md:flex-row items-center md:justify-between py-8 px-8 lg:p-16 xl:px-[140px] bg-[#F9F7F3] gap-6 md:gap-4"
+      >
+        <div class="order-2 md:order-1">
           <button
             class="bg-[#B4F461] rounded-lg text-[#111111] font-semibold text-xl"
           >
             <a href="/blog.html" class="px-8 py-3 inline-block">Blog</a>
           </button>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4 order-1">
           <figure>
             <img src="./assets/logo.png" alt="Donate Bangladesh Logo" />
           </figure>
@@ -35,7 +37,7 @@
             Donate Bangladesh
           </h2>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 order-3 md:order-1">
           <figure><img src="./assets/coin.png" alt="Coin Icon" /></figure>
           <h3 class="text-[#111111B2] text-xl font-medium">
             <span id="account-balance">55000</span> BDT
@@ -59,14 +61,21 @@
     </header>
     <main class="max-w-[1600px] mx-auto">
       <!-- Donation Tab -->
-      <section id="donation-container" class="px-[140px] mt-8 mb-20 space-y-8">
+      <section
+        id="donation-container"
+        class="px-8 lg:p-16 xl:px-[140px] mt-8 mb-20 space-y-8"
+      >
         <div
-          class="flex gap-8 border border-[#1111111A] justify-between p-8 rounded-2xl"
+          class="flex flex-col md:flex-row gap-8 border border-[#1111111A] justify-between p-8 rounded-2xl"
         >
           <figure>
-            <img src="./assets/noakhali.png" alt="Noakhali Flood" />
+            <img
+              class="w-full h-full object-cover rounded-2xl"
+              src="./assets/noakhali.png"
+              alt="Noakhali Flood"
+            />
           </figure>
-          <div class="space-y-4 lg:w-[50%] flex flex-col justify-between">
+          <div class="space-y-4 md:w-[50%] flex flex-col justify-between">
             <div
               class="bg-[#1111110D] inline-flex px-4 py-2 rounded-md gap-2 items-center w-fit"
             >
@@ -107,12 +116,16 @@
           </div>
         </div>
         <div
-          class="flex gap-8 border border-[#1111111A] justify-between p-8 rounded-2xl"
+          class="flex flex-col md:flex-row gap-8 border border-[#1111111A] justify-between p-8 rounded-2xl"
         >
           <figure>
-            <img src="./assets/feni.png" alt="Feni Flood" />
+            <img
+              class="w-full h-full object-cover rounded-2xl"
+              src="./assets/feni.png"
+              alt="Feni Flood"
+            />
           </figure>
-          <div class="space-y-4 lg:w-[50%] flex flex-col justify-between">
+          <div class="space-y-4 md:w-[50%] flex flex-col justify-between">
             <div
               class="bg-[#1111110D] inline-flex px-4 py-2 rounded-md gap-2 items-center w-fit"
             >
@@ -149,12 +162,16 @@
           </div>
         </div>
         <div
-          class="flex gap-8 border border-[#1111111A] justify-between p-8 rounded-2xl"
+          class="flex flex-col md:flex-row gap-8 border border-[#1111111A] justify-between p-8 rounded-2xl"
         >
           <figure>
-            <img src="./assets/quota-protest.png" alt="Quota Movement" />
+            <img
+              class="w-full h-full object-cover rounded-2xl"
+              src="./assets/quota-protest.png"
+              alt="Quota Movement"
+            />
           </figure>
-          <div class="space-y-4 lg:w-[50%] flex flex-col justify-between">
+          <div class="space-y-4 md:w-[50%] flex flex-col justify-between">
             <div
               class="bg-[#1111110D] inline-flex px-4 py-2 rounded-md gap-2 items-center w-fit"
             >
