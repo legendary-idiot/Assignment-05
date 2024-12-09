@@ -30,10 +30,19 @@ donationBtn.addEventListener("click", () => {
 });
 
 // Obtain Existing Balance
-let currentTotalBalance = document.getElementById("account-balance");
-let currentNoakhaliBalance = document.getElementById("balance-noakhali");
-let currentFeniBalance = document.getElementById("balance-feni");
-let currentQuotaBalance = document.getElementById("balance-quota");
+const currentTotalBalance = document.getElementById("account-balance");
+const currentNoakhaliBalance = document.getElementById("balance-noakhali");
+const currentFeniBalance = document.getElementById("balance-feni");
+const currentQuotaBalance = document.getElementById("balance-quota");
+
+// Obtain Titles of Donation Events
+const noakhaliDonationTitle = document.getElementById(
+  "donate-noakhali-title"
+).innerText;
+const feniDonationTitle =
+  document.getElementById("donate-feni-title").innerText;
+const quotaDonationTitle =
+  document.getElementById("donate-quota-title").innerText;
 
 // Check Input Number
 function numberChecker(testCase) {
@@ -52,15 +61,28 @@ const donateNowChoices = {
     "donatedAmountNoakhali",
     "donate-noakhali-btn",
     currentNoakhaliBalance,
+    noakhaliDonationTitle,
   ],
-  feni: ["donatedAmountFeni", "donate-feni-btn", currentFeniBalance],
-  quota: ["donatedAmountQuota", "donate-quota-btn", currentQuotaBalance],
+  feni: [
+    "donatedAmountFeni",
+    "donate-feni-btn",
+    currentFeniBalance,
+    feniDonationTitle,
+  ],
+  quota: [
+    "donatedAmountQuota",
+    "donate-quota-btn",
+    currentQuotaBalance,
+    quotaDonationTitle,
+  ],
 };
 
+// Update Based on Donation
 for (const donateNow in donateNowChoices) {
   const inputID = document.getElementById(donateNowChoices[donateNow][0]);
   const btnID = document.getElementById(donateNowChoices[donateNow][1]);
   const selectedEvent = donateNowChoices[donateNow][2];
+  const selectedEventTitle = donateNowChoices[donateNow][3];
   btnID.addEventListener("click", () => {
     const inputAmount = inputID.value;
     const isNumberValid = numberChecker(inputAmount);
@@ -77,7 +99,29 @@ for (const donateNow in donateNowChoices) {
         selectedEvent.innerText = selectedEventBalance + donatedAmount;
         my_modal_5.showModal();
         inputID.value = "";
+        // Update History
+        updateHistoryContainer(donatedAmount, selectedEventTitle);
       }
     }
   });
+}
+
+// History Content Update
+function updateHistoryContainer(amount, title) {
+  const divContainer = document.createElement("div");
+  divContainer.classList.add(
+    "border",
+    "border-[#1111111A]",
+    "p-8",
+    "rounded-xl",
+    "space-y-2"
+  );
+  const dateTime = new Date();
+  divContainer.innerHTML = `<h2 class="text-[#111111] font-bold text-xl">
+            ${amount} Taka is Donated for ${title}
+          </h2>
+          <p class="text-[#111111B2] font-light text-base">
+            ${dateTime}
+          </p>`;
+  historyContainer.prepend(divContainer);
 }
